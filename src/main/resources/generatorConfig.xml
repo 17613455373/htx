@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- bms端使用 -->
+<generatorConfiguration>
+    <classPathEntry
+            location="C:\Users\User\.m2\repository\mysql\mysql-connector-java\5.1.43\mysql-connector-java-5.1.43.jar"/>
+    <context id="context1" targetRuntime="MyBatis3">
+        <commentGenerator type="com.example.htx.plugins.MyCommentGenerator"/>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection
+                connectionURL="jdbc:mysql://rm-2ze7d245emkcf44e1uo.mysql.rds.aliyuncs.com:3306/htx?characterEncoding=UTF-8"
+                driverClass="com.mysql.jdbc.Driver" password="htx123456" userId="htx">
+            <property name="remarks" value="true" />
+            <property name="useInformationSchema" value="true" />
+        </jdbcConnection>
+        <!-- model存放目录 -->
+        <javaModelGenerator targetPackage="com.example.htx.entity"
+                            targetProject="D:\xianhe\htx\src\main\java"/>
+        <!-- mapper xml存放目录 -->
+        <sqlMapGenerator targetPackage="mybatis"
+                         targetProject="D:\xianhe\htx\src\main\resources"/>
+        <!-- 生成DAO的类文件以及配置文件 -->
+        <javaClientGenerator targetPackage="com.example.htx.dao"
+                             targetProject="D:\xianhe\htx\src\main\java"
+                             type="XMLMAPPER"/>
+
+        <table tableName="xh_ record_new_car_tp" domainObjectName="XhRecordNewCarTp"
+               enableInsert="true"
+               enableSelectByExample="true" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableCountByExample="false">
+        </table>
+
+    </context>
+</generatorConfiguration>
+        <!-- bms端使用 -->
